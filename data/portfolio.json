@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "siteTitle": "Madi — Roblox Developer",
+    "favicon": ""
+  },
+
+  "hero": {
+    "name": "Madi",
+    "logoText": "Madi /",
+    "logoAccent": "/ Dev !",
+    "title": "Madi",
+    "role": "Roblox Developer",
+    "bio": "I build immersive Roblox experiences — from complex game systems and smooth UI to optimized multiplayer servers. 5+ years scripting in Luau, shipping games people actually play.",
+    "status": "Available for projects",
+    "statusActive": true,
+    "avatarImage": "",
+    "avatarFallback": "Madi !",
+    "robloxProfileUrl": "https://www.roblox.com/users/4938426204/profile",
+    "ctaButtons": [
+      { "label": "View Projects", "href": "#projects", "style": "primary" },
+      { "label": "Hire Me",       "href": "#contact",  "style": "ghost"   }
+    ]
+  },
+
+  "stats": [
+    { "value": 5,      "format": "number", "label": "Total Projects" },
+    { "value": 3,       "format": "number", "label": "Active Now"     },
+    { "value": 5,       "format": "number", "label": "Years XP"       }
+  ],
+
+  "projects": [
+    {
+      "id": "project-starveil",
+      "name": "Project: StarVeil",
+      "description": "",
+      "status": "dev",
+      "visits": "Coming Soon",
+      "thumbnail": "",
+      "thumbnailFallbackLabel": "GAME 01",
+      "thumbnailFallbackGradient": "linear-gradient(135deg,#0a1828,#0f2240)",
+      "thumbnailFallbackColor": "#00d4ff",
+      "tags": ["Luau", "DataStore", "UI/UX"],
+      "robloxUrl": "https://www.roblox.com/games/125214166016459/StarVeil",
+      "linkLabel": "Play on Roblox"
+    }
+  ],
+
+  "media": {
+    "featuredVideo": {
+      "type": "youtube",
+      "youtubeId": "",
+      "localSrc": "",
+      "caption": "Project Alpha — Gameplay Showcase 2024"
+    },
+    "screenshots": [
+      { "src": "/IMAGES/Custom Framework.png", "alt": "Screenshot 1", "fallbackLabel": "Custom Framework." },
+      { "src": "", "alt": "Screenshot 2", "fallbackLabel": "SCR 02" },
+      { "src": "", "alt": "Screenshot 3", "fallbackLabel": "SCR 03" },
+      { "src": "", "alt": "Screenshot 4", "fallbackLabel": "SCR 04" }
+    ]
+  },
+
+  "skills": {
+    "bars": [
+      { "name": "Luau / Lua",    "pct": 95, "accent": "primary" },
+      { "name": "Roblox Studio", "pct": 90, "accent": "primary" },
+      { "name": "UI / UX Design","pct": 40, "accent": "primary" },
+      { "name": "Game Systems",  "pct": 88, "accent": "primary" },
+      { "name": "Multiplayer",   "pct": 90, "accent": "secondary" },
+      { "name": "3D Modeling",   "pct": 40, "accent": "secondary" }
+    ],
+    "tools": [
+      "Roblox Studio", "Luau", "DataStore v2", "Rojo",
+      "Datastore V2", "Custom Animate"
+    ]
+  },
+
+  "contact": {
+    "tagline": "Looking to hire a Roblox developer for your next project? Need someone to build robust game systems, polished UI, or manage a whole game from scratch? Let's talk.",
+    "formAction": "https://formsubmit.co/madiroblox.dev@gmail.com",
+    "socials": [
+      {
+        "platform": "Discord",
+        "handle": "yourname#0000",
+        "icon": "D",
+        "url": "https://discord.com/users/1007261626057097288"
+      },
+      {
+        "platform": "Twitter / X",
+        "handle": "@yourhandle",
+        "icon": "X",
+        "url": "https://x.com/MadiDoingDev"
+      },
+      {
+        "platform": "Roblox",
+        "handle": "YourRobloxName",
+        "icon": "R",
+        "url": "https://www.roblox.com/users/4938426204/profile"
+      },
+      {
+        "platform": "Email",
+        "handle": "madiroblox.dev@gmail.com",
+        "icon": "@",
+        "url": "mailto:madiroblox.dev@gmail.com"
+      }
+    ]
+  },
+
+  "footer": {
+    "copy": "© 2025 Madi. Built with HTML / CSS / JS.",
+    "logo": "Madi's your best choice !",
+    "sub": "Roblox Developer"
+  }
+}

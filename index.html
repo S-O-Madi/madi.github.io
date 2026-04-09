@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- title & favicon set by js/render.js from data/portfolio.json -->
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       NAV
+       ══════════════════════════════════ -->
+  <nav id="nav">
+    <a class="nav-logo" href="#"></a>
+    <ul id="nav-links"></ul>
+    <a class="nav-cta" href="#">Roblox Profile ↗</a>
+  </nav>
+
+
+  <!-- ══════════════════════════════════
+       HERO
+       ══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-inner container">
+
+      <div>
+        <div id="hero-badge" class="hero-badge">
+          <span class="blink"></span>
+          <span id="hero-badge-text"></span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="t-name" id="hero-name"></span>
+          <span class="t-role" id="hero-role"></span>
+        </h1>
+
+        <p class="hero-desc" id="hero-bio"></p>
+
+        <div class="hero-actions" id="hero-actions"></div>
+      </div>
+
+      <div class="hero-avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring avatar-ring-2"></div>
+        <div style="position:relative;">
+          <div class="avatar-box" id="avatar-box"></div>
+          <div class="avatar-tag">// ROBLOX DEVELOPER</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       STATS
+       ══════════════════════════════════ -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid" id="stats-grid">
+        <!-- injected by render.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       PROJECTS
+       ══════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">// 01 — Featured work</span>
+        <h2 class="section-title">Current Projects</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- injected by render.js -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       MEDIA
+       ══════════════════════════════════ -->
+  <section id="media">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">// 02 — Showcase</span>
+        <h2 class="section-title">Media Gallery</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="media-layout reveal">
+
+        <div>
+          <div class="media-featured" id="media-featured">
+            <!-- injected by render.js -->
+          </div>
+          <p class="media-caption" id="media-caption"></p>
+        </div>
+
+        <div>
+          <div class="media-thumb-grid" id="media-thumb-grid">
+            <!-- injected by render.js -->
+          </div>
+          <p class="media-caption">// In-game screenshots</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       SKILLS
+       ══════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">// 03 — Expertise</span>
+        <h2 class="section-title">Skills &amp; Tech</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-layout">
+
+        <div class="reveal">
+          <div class="skill-cat-label">Core Skills</div>
+          <div class="skill-bars" id="skill-bars">
+            <!-- injected by render.js -->
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="skill-cat-label">Tools &amp; Technologies</div>
+          <div class="tools-cloud" id="tools-cloud">
+            <!-- injected by render.js -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       CONTACT
+       ══════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-tag">// 04 — Get in touch</span>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-layout">
+
+        <div class="reveal">
+          <p class="contact-desc" id="contact-desc"></p>
+          <div class="social-links" id="social-links">
+            <!-- injected by render.js -->
+          </div>
+        </div>
+
+        <!-- Contact form — action wired by render.js -->
+        <div class="reveal">
+          <form class="contact-form" id="contact-form" method="POST">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input class="form-input" type="text" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input class="form-input" type="email" name="email" placeholder="john@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-textarea" name="message" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════
+       FOOTER
+       ══════════════════════════════════ -->
+  <footer>
+    <span class="footer-copy" id="footer-copy"></span>
+    <a class="footer-logo" href="#" id="footer-logo"></a>
+    <span class="footer-copy" id="footer-sub"></span>
+  </footer>
+
+
+  <!-- render.js fetches portfolio.json and populates everything above -->
+  <script src="js/render.js"></script>
+
+</body>
+</html>
