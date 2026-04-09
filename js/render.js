@@ -123,10 +123,18 @@ function buildProjects(projects) {
 /* ── MEDIA ── */
 function buildMedia(media) {
   /* featured video */
+
+  function getYouTubeId(url) {
+      if (!url) return null;
+
+      const match = url.match(/(?:youtu\.be\/|v=)([^&]+)/);
+      return match ? match[1] : null;
+  }
+
   const featured = qs('#media-featured');
   if (media.featuredVideo.youtubeId) {
     featured.innerHTML =
-      `<iframe src="https://www.youtube.com/embed/${media.featuredVideo.youtubeId}"
+      `<iframe src="https://www.youtube.com/embed/${getYouTubeId(media.featuredVideo.youtubeId)}"
                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                allowfullscreen></iframe>`;
   } else if (media.featuredVideo.localSrc) {
@@ -147,6 +155,32 @@ function buildMedia(media) {
       ? `<img src="${s.src}" alt="${s.alt}" />`
       : `<div class="media-thumb-placeholder">${s.fallbackLabel}</div>`;
     return `<div class="media-thumb">${inner}</div>`;
+  }).join('');
+
+  /* sub-videos*/
+  const vidGrid = qs('#sub-media-grid');
+  vidGrid.innerHTML = media.subVideos.map(v => {
+      let inner = "";
+
+      if (v.type === "youtube") {
+          const id = getYouTubeId(v.youtubeId);
+
+          if (id) {
+              inner = `<iframe src="https://www.youtube.com/embed/${id}"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>`;
+          }
+      } 
+      
+      else if (v.type === "local" && v.localSrc) {
+          inner = `<video src="${v.localSrc}" controls></video>`;
+      }
+
+      if (!inner) {
+          inner = `<div class="sub-media-thumb-placeholder">${v.fallbackLabel || "No video"}</div>`;
+      }
+
+      return `<div class="sub-media-thumb">${inner}</div>`;
   }).join('');
 }
 
@@ -223,20 +257,41 @@ function formatVisits(n) {
   return String(n);
 }
 
+function NumberStringRegex(input) {
+  let regex = /(\d+)(\+)/;
+  let match = input.match(regex);
+
+  if (match) {
+    let number = parseInt(match[1]);
+    let string = match[2];
+
+    return {number, string};
+  }
+}
+
 function initCountUp() {
   const counters = document.querySelectorAll('.stat-num[data-count]');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const el  = entry.target;
-      const end = parseInt(el.dataset.count);
       const fmt = el.dataset.format;
+      const NSRegex = NumberStringRegex(el.dataset.count)
+      const end = fmt !== 'string' ? parseInt(el.dataset.count) : NSRegex.number;
       const dur = 1800, step = 16;
       const inc = end / (dur / step);
       let cur = 0;
       const timer = setInterval(() => {
         cur = Math.min(cur + inc, end);
-        el.textContent = fmt === 'visits' ? formatVisits(Math.round(cur)) : Math.round(cur);
+        //el.textContent = fmt === 'visits' ? formatVisits(Math.round(cur)) : Math.round(cur);
+        if (fmt === 'visits') {
+          el.textContent = formatVisits(Math.round(cur));
+        } else if (fmt === "string") {
+          el.textContent = formatVisits(Math.round(cur)) + NSRegex.string
+        } else {
+          el.textContent = Math.round(cur)
+        }
+
         if (cur >= end) clearInterval(timer);
       }, step);
       obs.unobserve(el);
