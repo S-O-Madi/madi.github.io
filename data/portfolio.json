@@ -25,7 +25,7 @@
   "stats": [
     { "value": 5,      "format": "number", "label": "Total Projects" },
     { "value": 3,       "format": "number", "label": "Active Now"     },
-    { "value": 5,       "format": "number", "label": "Years XP"       }
+    { "value": 3,       "format": "number", "label": "Years XP"       }
   ],
 
   "projects": [
