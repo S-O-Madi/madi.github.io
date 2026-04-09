@@ -53,8 +53,8 @@
       "caption": "Project Alpha — Gameplay Showcase 2024"
     },
     "screenshots": [
-      { "src": "", "alt": "Screenshot 1", "fallbackLabel": "Custom Framework." },
-      { "src": "", "alt": "Screenshot 2", "fallbackLabel": "SCR 02" },
+      { "src": "IMAGES/Custom Framework.png", "alt": "Screenshot 1", "fallbackLabel": "Custom Framework." },
+      { "src": "IMAGES/Sword.png", "alt": "Screenshot 2", "fallbackLabel": "SCR 02" },
       { "src": "", "alt": "Screenshot 3", "fallbackLabel": "SCR 03" },
       { "src": "", "alt": "Screenshot 4", "fallbackLabel": "SCR 04" }
     ]
