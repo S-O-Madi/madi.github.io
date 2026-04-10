@@ -85,6 +85,7 @@ const STATUS_META = {
   live: { label: '● Live',       cls: 'status-live' },
   dev:  { label: '◐ In Dev',     cls: 'status-dev'  },
   done: { label: '✓ Completed',  cls: 'status-done' },
+  stop: { label: 'X Stopped',              cls: 'status-stop'}
 };
 
 function buildProjects(projects) {
