@@ -30,10 +30,14 @@
     
   ],
 
+  "feedbacks": [
+    {  }
+  ],
+
   "projects": [
     {
-      "id":                         "project-starveil",
-      "name":                       "Project: StarVeil",
+      "id":                         "project-unfaithful",
+      "name":                       "Unfaithful",
       "description":                "Unfaithful is my current Action RPG project !",
       "status":                     "dev",
       "visits":                     "Coming Soon",
@@ -41,9 +45,9 @@
       "thumbnailFallbackLabel":     "GAME 01",
       "thumbnailFallbackGradient":  "linear-gradient(135deg,#0a1828,#0f2240)",
       "thumbnailFallbackColor":     "#00d4ff",
-      "tags": ["Luau", "DataStore", "UI/UX", "Full-Stack", "Solo Dev"],
-      "robloxUrl":                  "#contact",
-      "linkLabel":                  "Not Available Yet"
+      "tags": ["Luau", "DataStore v2", "UI/UX", "Full-Stack", "Solo Dev"],
+      "robloxUrl":                  "https://discord.gg/QKjG9G9ZXK",
+      "linkLabel":                  "Join Discord Server"
     },
     {
       "id":                         "project-starveil",
@@ -83,7 +87,7 @@
       "caption": "Project: StarVeil — Gameplay & Showcase."
     },
     "subVideos": [
-      { "type": "youtube", "youtubeId": "", "localSrc": "", "fallbackLabel": "VID 01", "desc": "Simple Tooltip"}
+      { "type": "local", "youtubeId": "", "localSrc": "Assets/Videos/Sword Equip Test.mp4", "fallbackLabel": "VID 01", "desc": "Simple Tooltip"}
     ],
     "screenshots": [
       { "src": "Assets/Custom Framework.png", "alt": "Screenshot 1", "fallbackLabel": "Custom Framework." },
@@ -97,13 +101,13 @@
     "bars": [
       { "name": "Luau / Lua",    "pct": 95, "accent": "primary" },
       { "name": "Roblox Studio", "pct": 90, "accent": "primary" },
-      { "name": "UI / UX Design","pct": 40, "accent": "secondary" },
       { "name": "Game Systems",  "pct": 88, "accent": "primary" },
+      { "name": "UI / UX Design","pct": 70, "accent": "secondary" },
       { "name": "Multiplayer",   "pct": 90, "accent": "secondary" },
-      { "name": "3D Modeling",   "pct": 40, "accent": "secondary" }
+      { "name": "3D Modeling",   "pct": 35, "accent": "secondary" }
     ],
     "tools": [
-      "Roblox Studio", "Luau", "DataStore v2", "Rojo",
+      "Roblox Studio", "Luau", "Rojo",
       "Datastore V2", "Custom Animate"
     ]
   },

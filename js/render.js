@@ -1,20 +1,9 @@
-/* ═══════════════════════════════════════════════════════════════
-   PORTFOLIO RENDERER — js/render.js
-   Reads data/portfolio.json and injects every section into the DOM.
-   No external dependencies. Pure vanilla JS.
-   ═══════════════════════════════════════════════════════════════ */
 
 /* ── helpers ── */
 const el   = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; };
 const qs   = (sel, root = document) => root.querySelector(sel);
 const set  = (sel, html, root = document) => { const e = qs(sel, root); if (e) e.innerHTML = html; };
 const attr = (e, obj) => { Object.entries(obj).forEach(([k,v]) => e.setAttribute(k, v)); return e; };
-
-/* ─────────────────────────────────────────────────────────────
-   SECTION BUILDERS
-   Each function receives the relevant slice of the JSON data
-   and returns a DocumentFragment or Node to append.
-   ───────────────────────────────────────────────────────────── */
 
 /* ── META ── */
 function buildMeta(data) {
@@ -234,11 +223,6 @@ function buildFooter(footer) {
   qs('#footer-sub').textContent   = footer.sub;
 }
 
-
-/* ─────────────────────────────────────────────────────────────
-   ANIMATIONS (run after render)
-   ───────────────────────────────────────────────────────────── */
-
 function initReveal() {
   const items = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver((entries) => {
@@ -253,6 +237,7 @@ function initReveal() {
 }
 
 function formatVisits(n) {
+  if (n >= 1_000_000_000) return (n / 1_000_000_000).toFixed(1) + 'B';
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
   if (n >= 1_000)     return (n / 1_000).toFixed(0) + 'K';
   return String(n);
@@ -313,10 +298,6 @@ function initSkillBars() {
   bars.forEach(b => obs.observe(b));
 }
 
-
-/* ─────────────────────────────────────────────────────────────
-   BOOT — fetch JSON → render → animate
-   ───────────────────────────────────────────────────────────── */
 fetch('data/portfolio.json')
   .then(r => {
     if (!r.ok) throw new Error(`Failed to load portfolio.json (${r.status})`);
@@ -333,7 +314,6 @@ fetch('data/portfolio.json')
     buildContact(data.contact);
     buildFooter(data.footer);
 
-    /* animations need the DOM to be populated first */
     initReveal();
     initCountUp();
     initSkillBars();
